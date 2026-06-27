@@ -1,0 +1,161 @@
+/*Header Section Style*/
+
+/* Applique ces règles à absolument tous les éléments du site */
+* {
+    margin: 0 ;                    /* Supprime les espaces externes par défaut */
+    padding: 0 ;                   /* Supprime les espaces internes par défaut */
+    box-sizing: border-box ;       /* Inclut les bordures et le padding dans le calcul de la taille des éléments */
+    text-decoration: none ;        /* Retire le soulignement automatique des liens textes */
+    list-style: none ;             /* Enlève les puces par défaut des listes (ul, li) */
+    border: none ;                 /* Enlève toutes les bordures par défaut */
+    outline: none ;                /* Enlève le contour d'interaction au clic */
+    scroll-behavior: smooth ;      /* Rend le défilement de la page fluide lors d'un clic sur une ancre */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                 "Helvetica Neue", sans-serif ; /* Police d'écriture par défaut du système */
+}
+
+/* Zone de stockage des variables de couleurs réutilisables */
+:root {
+    --bg-color: #ffffff ;          /* Blanc pour le fond du site */
+    --snd-bg-color: #f4f4f4 ;      /* Gris clair pour les zones secondaires */
+    --text-color: #1349a0 ;        /* Bleu foncé pour les textes standards */
+    --main-color: #c51616 ;        /* Rouge vif pour l'accentuation principale */
+}
+
+/* Redéfinit l'unité de base pour que 1rem soit égal à 10px au lieu de 16px */
+html {
+    font-size: 62.5% ;
+}
+
+/* Applique les couleurs par défaut au fond et au texte général */
+body {
+    background: var(--bg-color) ;
+    color: var(--text-color) ;
+}
+
+/* Style commun à toutes les sections de la page pour une mise en page uniforme */
+section {
+    min-height: 100vh ;            /* Force la section à faire au moins la hauteur complète de l'écran */
+    padding: 10rem 8% 2rem ;       /* Espace interne : haut, gauche/droite, bas */
+}
+
+/* Gère la barre globale qui contient le logo et le menu */
+header {
+    position: fixed ;              /* Fixe la barre au sommet de l'écran pendant le défilement */
+    width: 100% ;                  /* Étire la barre sur toute la largeur de la page */
+    top: 0 ;                       /* Aligne la barre tout en haut */
+    right: 0 ;                     /* Aligne la barre sur le bord droit */
+    z-index: 1000 ;                /* Force l'entête à rester au-dessus de tous les autres éléments */
+    display: flex ;                /* Aligne ses enfants directs en ligne horizontale */
+    justify-content: space-between ; /* Espace au maximum les blocs : logo à gauche, menu au milieu, bouton à droite */
+    align-items: center ;          /* Centre verticalement tous les éléments à l'intérieur */
+    padding: 2rem 9% ;             /* Marges internes pour aérer le contenu de la barre */
+    background-color: rgba(255, 255, 255, 0.95) ; /* Couleur de fond blanche légèrement transparente */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) ; /* Ajoute un léger effet d'ombre sous la barre */
+    transition: all 0.5s ease ;    /* Animation fluide en cas de modification de la structure */
+}
+
+/* Style appliqué au lien servant de Logo */
+.logo {
+    font-size: 2.5rem ;            /* Taille du texte du logo */
+    font-weight: 700 ;             /* Met le logo en gras */
+    color: var(--text-color) ;     /* Colore en bleu foncé */
+    display: inline-block ;        /* Permet d'appliquer correctement l'effet de transformation d'échelle */
+    transition: 0.3s ease-in-out ; /* Transition fluide pour l'effet de survol */
+}
+
+/* Effet d'animation lorsque la souris passe sur le logo */
+.logo:hover {
+    transform: scale(1.1) ;        /* Grossit légèrement le logo de 10% au survol */
+}
+
+/* Style appliqué spécifiquement au mot isolé dans le logo (Fitness) */
+.logo span {
+    color: var(--main-color) ;     /* Colore ce morceau en rouge vif */
+}
+
+/* Conteneur de la liste de navigation */
+.nav-bar {
+    display: flex ;                /* Aligne les liens de navigation horizontalement */
+}
+
+/* Style individuel de chaque lien texte du menu */
+.nav-bar a {
+    font-size: 1.8rem ;            /* Taille de la police */
+    color: var(--text-color) ;     /* Couleur bleue par défaut */
+    font-weight: 500 ;             /* Épaisseur moyenne du texte */
+    margin-left: 4rem ;            /* Ajoute un espace à gauche de chaque lien pour les séparer */
+    transition: all 0.3s ease ;    /* Animation fluide du changement de couleur et de bordure */
+    border-bottom: 3px solid transparent ; /* Prépare une bordure invisible pour éviter les secousses visuelles au survol */
+}
+
+/* Style au survol ou lorsque le lien possède la classe "active" (page courante) */
+.nav-bar a:hover,
+.nav-bar a.active {
+    color: var(--main-color) ;     /* Le texte change de couleur pour devenir rouge */
+    border-bottom: 3px solid var(--main-color) ; /* Fait apparaître un trait rouge sous le lien */
+}
+
+/* Style appliqué au bouton d'appel à l'action "Join Us" (Rejoignez-nous) */
+.nav-btn {
+    display: inline-block ;        /* Permet de donner des dimensions et paddings précis au bouton */
+    padding: 1rem 2.8rem ;         /* Espace à l'intérieur du bouton (hauteur et largeur) */
+    background-color: transparent ; /* Pas de couleur de fond initiale */
+    color: var(--text-color) ;     /* Texte de couleur bleue */
+    border: 2px solid var(--text-color) ; /* Bordure entourant le bouton de couleur bleue */
+    border-radius: 1rem ;          /* Arrondit les quatre angles du bouton */
+    font-size: 1.6rem ;            /* Taille du texte */
+    font-weight: 600 ;             /* Épaisseur du texte assez marquée */
+    transition: all 0.3s ease ;    /* Transition pour l'effet d'animation au survol */
+    cursor: pointer ;              /* Modifie l'aspect du curseur en "main cliquable" */
+}
+
+/* Effet visuel lors du passage de la souris sur le bouton */
+.nav-btn:hover {
+    background-color: var(--main-color) ; /* Le fond devient rouge */
+    border-color: var(--main-color) ;     /* La bordure devient rouge */
+    color: #ffffff ;                      /* Le texte passe en blanc pour rester lisible */
+}
+
+
+
+/*================================================================================================================================================*/
+
+/* Home Section Basic Layout */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.home-content h3 {
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.home-content h3 span {
+    color: var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    line-height: 1.6;
+}
+
+.home-img img {
+    max-width: 450px ;
+    width: 100% ;
+}
+
+.heading {
+    font-size: 4rem ;
+    text-align: center ;
+    margin-top: 5rem ;
+}
+
+.heading span {
+    color: var(--main-color) ; 
+}
