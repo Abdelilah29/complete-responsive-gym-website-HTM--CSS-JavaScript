@@ -288,3 +288,64 @@ span {
     box-shadow: 0 10px 20px rgba(197, 22, 22, 0.2) ; /* Ajoute un halo moderne et tamisé aux nuances rouges */
     cursor: pointer ;              /* Indique clairement à l'utilisateur que l'élément est cliquable */
 }
+
+/* ================================================================================================================================================ */
+/* About Us - Structure de base */
+
+/* Style du conteneur principal de la section À Propos */
+.about {
+    display: flex ;                /* Aligne le bloc image et le bloc texte côte à côte */
+    justify-content: center ;      /* Centre horizontalement l'ensemble du contenu */
+    align-items: center ;          /* Aligne verticalement l'image et le texte au centre */
+    gap: 6rem ;                    /* Espace de sécurité régulier entre l'image et le bloc de texte */
+}
+
+/* Conteneur de l'image de présentation - Agrandi ici */
+.about-img {
+    flex: 1.3 ;                    /* Augmente la place allouée à l'image pour la rendre plus imposante (anciennement 1) */
+    display: flex ;                /* Centre l'image à l'intérieur de son propre bloc parent */
+    justify-content: center ;
+}
+
+/* Style de la balise image elle-même */
+.about-img img {
+    width: 100% ;                  /* L'image prend toute la largeur disponible de son grand conteneur parent */
+    max-width: 60rem ;             /* Augmente la limite de taille maximale (de 50rem à 60rem) pour afficher l'image en plus grand */
+    border: 2px solid var(--text-color) ; /* Applique une fine bordure aux couleurs du texte principal */
+    border-radius: 1rem ;          /* Arrondit proprement les angles de l'image */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) ; /* Ajoute une ombre douce sous l'image */
+    transition: all 0.4s ease-in-out ; /* Gère la fluidité de l'animation de survol */
+}
+
+/* Effets interactifs au survol de la souris sur l'image */
+.about-img img:hover {
+    transform: scale(1.03) ;        /* Grossit légèrement l'image pour créer un effet d'immersion */
+    border-color: var(--main-color) ; /* La couleur de la bordure passe dynamiquement au rouge vif */
+    box-shadow: 0 10px 25px rgba(197, 22, 22, 0.15) ; /* Accentue le halo lumineux rouge en arrière-plan */
+}
+
+/* Conteneur des blocs de textes de présentation - Légèrement réduit pour équilibrer la mise en page */
+.about-content {
+    flex: 1 ;                      /* Garde une proportion équilibrée face à l'image agrandie */
+}
+
+/* Titre principal de la section ("Why Choose Us?") */
+.about-content .heading {
+    text-align: left ;             /* Aligne le titre à gauche pour suivre la structure de lecture */
+    font-size: 5.6rem ;            /* Taille uniforme avec les grands titres du site */
+    line-height: 1.2 ;             /* Rapproche les lignes de texte du titre */
+    margin-bottom: 2rem ;          /* Espace sous le titre avant d'attaquer les paragraphes */
+}
+
+/* Style de tous les paragraphes de texte de la section */
+.about-content p {
+    font-size: 1.6rem ;            /* Taille de lecture standard et lisible */
+    line-height: 1.7 ;             /* Donne de l'espace entre les lignes de lecture */
+    color: var(--text-color) ;     /* Couleur par défaut du texte */
+    margin-bottom: 1.5rem ;        /* Sépare chaque paragraphe d'un espace régulier vers le bas */
+}
+
+/* Force une marge plus importante sous le tout dernier paragraphe pour détacher le bouton */
+.about-content p:last-of-type {
+    margin-bottom: 3rem ;
+}
