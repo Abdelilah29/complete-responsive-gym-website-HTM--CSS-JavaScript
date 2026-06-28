@@ -229,5 +229,62 @@ span {
 }
 
 
-/*================================================================================================================================================*/
+/* ================================================================================================================================================ */
+/* Section Services - Structure de base */
 
+/* Style global appliqué au conteneur de la section Services */
+.services {
+    background: var(--snd-bg-color) ; /* Applique la couleur de fond secondaire (gris clair) */
+}
+
+/* Titre principal de la section ("Our Services") */
+.heading {
+    text-align: center ;            /* Centre parfaitement le titre horizontalement */
+    font-size: 6.5rem ;             /* Donne une taille imposante et lisible au titre */
+    margin-bottom: 2rem ;           /* Ajoute un espace de sécurité sous le titre principal */
+}
+
+/* Grille parente contenant toutes les cartes de services */
+.services-content {
+    display: grid ;                /* Active le mode de mise en page en grille */
+    /* Crée automatiquement le nombre de colonnes nécessaires selon la taille de l'écran, avec une largeur minimale de 350px par carte */
+    grid-template-columns: repeat(auto-fit , minmax(350px , 1fr)) ; 
+    align-items: center ;          /* Aligne les éléments verticalement au centre si nécessaire */
+    gap: 2.5rem ;                  /* Espace régulier et homogène entre chaque carte de service */
+    margin-top: 4.1rem ;           /* Espace entre le titre général et le début de la grille */
+}
+
+/* Style individuel de chaque carte de service (Row) */
+.row {
+    background: var(--bg-color) ;  /* Fond blanc pur pour détacher la carte du fond gris */
+    border-radius: 2.7rem ;        /* Arrondit généreusement les angles des cartes (converti en rem pour la cohérence) */
+    border: 2px solid transparent ;/* Prépare une bordure invisible pour éviter les sauts visuels lors du survol */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) ; /* Remplace le halo rouge agressif par une ombre légère et élégante par défaut */
+    padding: 2.5rem ;              /* Espace interne tout autour du contenu de la carte */
+    transition: all 0.4s ease-in-out ; /* Gère la fluidité des animations de survol (position, échelle, ombres) */
+}
+
+/* Style des images à l'intérieur de chaque carte */
+.row img {
+    height: auto ;                 /* Conserve le ratio d'aspect d'origine de l'image */
+    width: 100% ;                  /* Force l'image à occuper toute la largeur disponible de la carte */
+    border-radius: 2rem ;          /* Arrondit les angles de l'image pour s'adapter à la carte */
+    margin-bottom: 1.8rem ;        /* Crée un espace sous l'image avant le titre textuel */
+}
+
+/* Style des titres de services (h4) */
+.row h4 {
+    font-size: 2.2rem ;            /* Taille du texte claire et lisible (converti en rem) */
+    font-weight: 700 ;             /* Met le titre en gras pour l'affirmation visuelle */
+    margin-bottom: 1rem ;          /* Espace de sécurité sous le titre */
+    line-height: 1.4 ;             /* Ajuste l'interlignage pour les titres longs sur deux lignes */
+    text-align: center ;           /* Centre le texte pour un meilleur équilibre visuel sous l'image */
+}
+
+/* Effets visuels et interactifs au survol d'une carte de service */
+.row:hover {
+    border: 2px solid var(--main-color) ; /* Fait apparaître une bordure nette rouge vif */
+    transform: translateY(-7px) scale(1.02) ; /* Soulève subtilement la carte et l'agrandit légèrement */
+    box-shadow: 0 10px 20px rgba(197, 22, 22, 0.2) ; /* Ajoute un halo moderne et tamisé aux nuances rouges */
+    cursor: pointer ;              /* Indique clairement à l'utilisateur que l'élément est cliquable */
+}
