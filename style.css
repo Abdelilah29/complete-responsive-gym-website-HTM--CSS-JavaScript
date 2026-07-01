@@ -349,3 +349,95 @@ span {
 .about-content p:last-of-type {
     margin-bottom: 3rem ;
 }
+
+/* ================================================================================================================================================ */
+/* Pricing Plans - Structure de base */
+
+.plans {
+    background-color: var(--snd-bg-color); /* Couleur de fond secondaire de la section */
+    padding: 6rem 9% 7rem; /* Ajout d'un espacement interne pour centrer le contenu global dans la page */
+}
+
+/* Le conteneur de la grille (Correction du sélecteur : .plans.content est devenu .plans-content) */
+.plans-content {
+    display: grid; /* Active le mode de mise en page en Grille CSS */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crée des colonnes responsives d'au moins 300px qui s'adaptent à l'écran */
+    gap: 2.3rem; /* Espace de 2.3rem entre chaque carte (box) */
+    margin-top: 4.2rem; /* Marge de 4.2rem au-dessus de la grille pour l'éloigner du titre principal */
+}
+
+/* Le style de chaque carte d'abonnement */
+.box {
+    padding: 30px 30px 50px 30px; /* Espacement interne de la carte : Haut 30px, Droite 30px, Bas 50px, Gauche 30px */
+    display: flex; /* Active Flexbox pour aligner les éléments verticalement */
+    flex-direction: column; /* Aligne les éléments du plan du haut vers le bas */
+    justify-content: space-between; /* Aligne le bouton tout en bas de la carte de manière homogène */
+    background: var(--bg-color); /* Couleur de fond principale de la carte */
+    border-radius: 28px; /* Arrondit les angles de la carte à 28px */
+    border: 1px solid transparent; /* Crée une bordure transparente initiale (évite les sauts de pixels au survol) */
+    box-shadow: 0 0 5px var(--main-color); /* Applique un effet d'ombre légère autour de la carte avec la couleur principale */
+    transition: all 0.5s ease; /* Fluidifie l'animation des changements d'états (ex: lors du survol) sur 0.5 seconde */
+    cursor: pointer; /* Modifie le curseur de la souris en forme de main au survol de la carte */
+}
+
+/* Titre du plan (ex: Basic Plan, Premium Plan) */
+.box h3 {
+    font-size: 35px; /* Taille de la police à 35 pixels */
+    font-weight: 600; /* Épaisseur de la police semi-grasse */
+    color: var(--text-color); /* Couleur du texte basée sur votre variable */
+    margin-bottom: 10px; /* Marge de 10px sous le titre pour l'éloigner du prix */
+}
+
+/* Prix du plan (ex: 3000 DA) */
+.box h2 {
+    font-size: 43px; /* Taille de la police à 43 pixels */
+    font-weight: 700; /* Épaisseur de la police très grasse (Bold) */
+    color: var(--main-color); /* Utilise la couleur principale pour mettre le prix en valeur */
+    margin-bottom: 20px; /* Marge de 20px sous le prix pour l'éloigner de la liste des fonctionnalités */
+}
+
+/* Éléments de la liste à puces (les avantages) */
+.box ul li {
+    list-style: disc; /* Force l'affichage des puces sous forme de disques/points */
+    font-size: 1.7rem; /* Taille de la police à 1.7rem */
+    padding-bottom: 1.2rem; /* Espacement de 1.2rem sous chaque élément de la liste */
+    color: var(--text-color); /* Couleur du texte des avantages */
+    margin-left: 20px; /* Décale les puces vers la droite pour un meilleur alignement */
+}
+
+/* Style du bouton d'action (Join Now) */
+.box .btn {
+    display: inline-block; /* Permet d'appliquer des marges et dimensions tout en restant en ligne */
+    padding: 10px 30px; /* Espacement interne du bouton : 10px haut/bas, 30px gauche/droite */
+    background: var(--text-color); /* Couleur de fond initiale du bouton */
+    border: 2px solid transparent; /* Bordure transparente initiale */
+    border-radius: 8px; /* Arrondit légèrement les angles du bouton */
+    font-size: 22px; /* Taille de la police à 22 pixels */
+    color: #ffffff; /* Couleur du texte en blanc */
+    font-weight: 700; /* Épaisseur du texte en gras */
+    text-align: center; /* Centre le texte à l'intérieur du bouton */
+    text-decoration: none; /* Supprime le soulignement automatique des liens hypertextes */
+    transition: all 0.5s ease; /* Transition fluide de 0.5s pour l'effet de survol */
+    margin-top: 2rem; /* Assure un espace au-dessus du bouton */
+}
+
+/* Les icônes éventuelles insérées dans les cartes */
+.box i {
+    vertical-align: middle; /* Aligne verticalement l'icône au milieu du texte environnant */
+    font-size: 25px; /* Taille de l'icône à 25 pixels */
+    color: var(--main-color); /* Couleur de l'icône définie par la variable principale */
+}
+
+/* Animation au survol de la carte (Hover effect) */
+.box:hover {
+    border: 1px solid var(--main-color); /* Fait apparaître une bordure de la couleur principale */
+    transform: translateY(-8px) scale(1.01); /* Déplace légèrement la carte vers le haut et l'agrandit à peine pour un effet dynamique */
+    box-shadow: 0 0 15px var(--main-color); /* Intensifie l'ombre pour accentuer l'effet de l'élévation */
+}
+
+/* Modification du bouton lorsque la carte est survolée */
+.box:hover .btn {
+    background: transparent; /* Le fond du bouton devient transparent */
+    color: var(--main-color); /* Le texte prend la couleur principale */
+    border: 2px solid var(--main-color); /* Une bordure de la couleur principale apparaît */
+}
