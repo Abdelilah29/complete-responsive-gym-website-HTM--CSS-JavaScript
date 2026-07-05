@@ -530,3 +530,55 @@ span {
     box-shadow: 0 10px 20px rgba(197, 22, 22, 0.2) ; /* Projette une ombre douce teintée de rouge sous la carte */
     border: 3px solid var(--main-color) ; /* Fait basculer la couleur de la bordure vers la couleur principale */
 }
+
+/* ================================================================================================================================================ */
+/* Footer - Structure de base */
+
+/* Section globale du pied de page */
+.footer {
+    position: relative ; /* Permet de positionner les éléments internes de manière relative */
+    bottom: 0 ; /* Aligne le bas de la section au bas de la page */
+    width: 100% ; /* Étire la section sur toute la largeur de la fenêtre */
+    padding: 40px 0 ; /* Ajoute un espacement interne de 40px en haut et en bas */
+    background: var(--snd-bg-color) ; /* Applique la couleur de fond secondaire à la section pied de page */
+}
+
+/* Bloc contenant les liens des réseaux sociaux */
+.footer .social_media {
+    display: flex ; /* Active Flexbox pour aligner les boutons horizontalement */
+    justify-content: center ; /* Centre horizontalement le bloc de boutons sur la page */
+    align-items: center ; /* Aligne verticalement les éléments au centre */
+    padding-bottom: 20px ; /* Ajoute un espace de 20px sous les icônes pour les séparer du texte */ 
+}
+
+/* Style individuel de chaque bouton de réseau social (Lien) */
+.footer .social_media a {
+    display: inline-flex ; /* Active Flexbox en ligne pour centrer l'icône à l'intérieur du cercle */
+    justify-content: center ; /* Centre horizontalement l'icône dans son conteneur */
+    align-items: center ; /* Centre verticalement l'icône dans son conteneur */
+    font-size: 25px ; /* Fixe la taille des icônes à 25 pixels */
+    color: var(--main-color) ; /* Colore les icônes avec la couleur principale définie dans les variables */
+    border: 2px solid var(--main-color) ; /* Ajoute une bordure autour de chaque icône pour un effet de bouton */
+    width: 42px ; /* Définit une largeur fixe pour chaque icône pour un espacement uniforme */
+    height: 42px ; /* Définit une hauteur fixe pour chaque icône pour un espacement uniforme */
+    border-radius: 50% ; /* Transforme les angles carrés en un cercle parfait */
+    margin: 0 10px ; /* Ajoute un espace de 10px à gauche et à droite de chaque icône */
+    transition: 0.3s ease-in-out ; /* Ajoute une transition fluide pour les effets de survol */
+    text-decoration: none ; /* Supprime le soulignement par défaut des liens */
+}
+
+/* Effet au survol (Hover) sur les icônes de réseaux sociaux */
+.footer .social_media a:hover {
+    transform: scale(1.2) translateY(-10px) ; /* Agrandit l'icône de 20% et la soulève de 10px pour un effet dynamique */
+    background: var(--main-color) ; /* Change le fond de l'icône au survol pour la couleur principale */
+    color: #ffffff ; /* Change la couleur de l'icône au survol pour un contraste optimal */
+    box-shadow: 0 0 25px var(--main-color) ; /* Ajoute un halo lumineux autour de l'icône au survol */
+}
+
+/* Ligne de texte de copyright */
+.footer .copyright {
+    margin-top: 20px ; /* Ajoute un espace de 20px au-dessus du texte de copyright */
+    text-align: center ; /* Centre le texte de copyright horizontalement */
+    font-size: 16px ; /* Définit la taille de la police à 16 pixels */
+    color: var(--text-color) ; /* Colore le texte avec la couleur de texte secondaire définie dans les variables */ 
+}
