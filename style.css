@@ -354,90 +354,179 @@ span {
 /* Pricing Plans - Structure de base */
 
 .plans {
-    background-color: var(--snd-bg-color); /* Couleur de fond secondaire de la section */
-    padding: 6rem 9% 7rem; /* Ajout d'un espacement interne pour centrer le contenu global dans la page */
+    background-color: var(--snd-bg-color) ; /* Couleur de fond secondaire de la section */
+    padding: 6rem 9% 7rem ; /* Ajout d'un espacement interne pour centrer le contenu global dans la page */
 }
 
-/* Le conteneur de la grille (Correction du sélecteur : .plans.content est devenu .plans-content) */
+/* Le conteneur de la grille */
 .plans-content {
-    display: grid; /* Active le mode de mise en page en Grille CSS */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crée des colonnes responsives d'au moins 300px qui s'adaptent à l'écran */
-    gap: 2.3rem; /* Espace de 2.3rem entre chaque carte (box) */
-    margin-top: 4.2rem; /* Marge de 4.2rem au-dessus de la grille pour l'éloigner du titre principal */
+    display: grid ; /* Active le mode de mise en page en Grille CSS */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) ; /* Crée des colonnes responsives d'au moins 300px qui s'adaptent à l'écran */
+    gap: 2.3rem ; /* Espace de 2.3rem entre chaque carte (box) */
+    margin-top: 4.2rem ; /* Marge de 4.2rem au-dessus de la grille pour l'éloigner du titre principal */
 }
 
 /* Le style de chaque carte d'abonnement */
 .box {
-    padding: 30px 30px 50px 30px; /* Espacement interne de la carte : Haut 30px, Droite 30px, Bas 50px, Gauche 30px */
-    display: flex; /* Active Flexbox pour aligner les éléments verticalement */
-    flex-direction: column; /* Aligne les éléments du plan du haut vers le bas */
-    justify-content: space-between; /* Aligne le bouton tout en bas de la carte de manière homogène */
-    background: var(--bg-color); /* Couleur de fond principale de la carte */
-    border-radius: 28px; /* Arrondit les angles de la carte à 28px */
-    border: 1px solid transparent; /* Crée une bordure transparente initiale (évite les sauts de pixels au survol) */
-    box-shadow: 0 0 5px var(--main-color); /* Applique un effet d'ombre légère autour de la carte avec la couleur principale */
-    transition: all 0.5s ease; /* Fluidifie l'animation des changements d'états (ex: lors du survol) sur 0.5 seconde */
-    cursor: pointer; /* Modifie le curseur de la souris en forme de main au survol de la carte */
+    padding: 30px 30px 50px 30px ; /* Espacement interne de la carte : Haut 30px, Droite 30px, Bas 50px, Gauche 30px */
+    display: flex ; /* Active Flexbox pour aligner les éléments verticalement */
+    flex-direction: column ; /* Aligne les éléments du plan du haut vers le bas */
+    justify-content: space-between ; /* Aligne le bouton tout en bas de la carte de manière homogène */
+    background: var(--bg-color) ; /* Couleur de fond principale de la carte */
+    border-radius: 28px ; /* Arrondit les angles de la carte à 28px */
+    border: 1px solid transparent ; /* Crée une bordure transparente initiale (évite les sauts de pixels au survol) */
+    box-shadow: 0 0 5px var(--main-color) ; /* Applique un effet d'ombre légère autour de la carte avec la couleur principale */
+    transition: all 0.5s ease ; /* Fluidifie l'animation des changements d'états sur 0.5 seconde */
+    cursor: pointer ; /* Modifie le curseur de la souris en forme de main au survol de la carte */
 }
 
 /* Titre du plan (ex: Basic Plan, Premium Plan) */
 .box h3 {
-    font-size: 35px; /* Taille de la police à 35 pixels */
-    font-weight: 600; /* Épaisseur de la police semi-grasse */
-    color: var(--text-color); /* Couleur du texte basée sur votre variable */
-    margin-bottom: 10px; /* Marge de 10px sous le titre pour l'éloigner du prix */
+    font-size: 35px ; /* Taille de la police à 35 pixels */
+    font-weight: 600 ; /* Épaisseur de la police semi-grasse */
+    color: var(--text-color) ; /* Couleur du texte basée sur votre variable */
+    margin-bottom: 10px ; /* Marge de 10px sous le titre pour l'éloigner du prix */
 }
 
 /* Prix du plan (ex: 3000 DA) */
 .box h2 {
-    font-size: 43px; /* Taille de la police à 43 pixels */
-    font-weight: 700; /* Épaisseur de la police très grasse (Bold) */
-    color: var(--main-color); /* Utilise la couleur principale pour mettre le prix en valeur */
-    margin-bottom: 20px; /* Marge de 20px sous le prix pour l'éloigner de la liste des fonctionnalités */
+    font-size: 43px ; /* Taille de la police à 43 pixels */
+    font-weight: 700 ; /* Épaisseur de la police très grasse (Bold) */
+    color: var(--main-color) ; /* Utilise la couleur principale pour mettre le prix en valeur */
+    margin-bottom: 20px ; /* Marge de 20px sous le prix pour l'éloigner de la liste des fonctionnalités */
 }
 
 /* Éléments de la liste à puces (les avantages) */
 .box ul li {
-    list-style: disc; /* Force l'affichage des puces sous forme de disques/points */
-    font-size: 1.7rem; /* Taille de la police à 1.7rem */
-    padding-bottom: 1.2rem; /* Espacement de 1.2rem sous chaque élément de la liste */
-    color: var(--text-color); /* Couleur du texte des avantages */
-    margin-left: 20px; /* Décale les puces vers la droite pour un meilleur alignement */
+    list-style: disc ; /* Force l'affichage des puces sous forme de disques/points */
+    font-size: 1.7rem ; /* Taille de la police à 1.7rem */
+    padding-bottom: 1.2rem ; /* Espacement de 1.2rem sous chaque élément de la liste */
+    color: var(--text-color) ; /* Couleur du texte des avantages */
+    margin-left: 20px ; /* Décale les puces vers la droite pour un meilleur alignement */
 }
 
 /* Style du bouton d'action (Join Now) */
 .box .btn {
-    display: inline-block; /* Permet d'appliquer des marges et dimensions tout en restant en ligne */
-    padding: 10px 30px; /* Espacement interne du bouton : 10px haut/bas, 30px gauche/droite */
-    background: var(--text-color); /* Couleur de fond initiale du bouton */
-    border: 2px solid transparent; /* Bordure transparente initiale */
-    border-radius: 8px; /* Arrondit légèrement les angles du bouton */
-    font-size: 22px; /* Taille de la police à 22 pixels */
-    color: #ffffff; /* Couleur du texte en blanc */
-    font-weight: 700; /* Épaisseur du texte en gras */
-    text-align: center; /* Centre le texte à l'intérieur du bouton */
-    text-decoration: none; /* Supprime le soulignement automatique des liens hypertextes */
-    transition: all 0.5s ease; /* Transition fluide de 0.5s pour l'effet de survol */
-    margin-top: 2rem; /* Assure un espace au-dessus du bouton */
+    display: inline-block ; /* Permet d'appliquer des marges et dimensions tout en restant en ligne */
+    padding: 10px 30px ; /* Espacement interne du bouton : 10px haut/bas, 30px gauche/droite */
+    background: var(--text-color) ; /* Couleur de fond initiale du bouton */
+    border: 2px solid transparent ; /* Bordure transparente initiale */
+    border-radius: 8px ; /* Arrondit légèrement les angles du bouton */
+    font-size: 22px ; /* Taille de la police à 22 pixels */
+    color: #ffffff ; /* Couleur du texte en blanc */
+    font-weight: 700 ; /* Épaisseur du texte en gras */
+    text-align: center ; /* Centre le texte à l'intérieur du bouton */
+    text-decoration: none ; /* Supprime le soulignement automatique des liens hypertextes */
+    transition: all 0.5s ease ; /* Transition fluide de 0.5s pour l'effet de survol */
+    margin-top: 2rem ; /* Assure un espace au-dessus du bouton */
 }
 
 /* Les icônes éventuelles insérées dans les cartes */
 .box i {
-    vertical-align: middle; /* Aligne verticalement l'icône au milieu du texte environnant */
-    font-size: 25px; /* Taille de l'icône à 25 pixels */
-    color: var(--main-color); /* Couleur de l'icône définie par la variable principale */
+    vertical-align: middle ; /* Aligne verticalement l'icône au milieu du texte environnant */
+    font-size: 25px ; /* Taille de l'icône à 25 pixels */
+    color: var(--main-color) ; /* Couleur de l'icône définie par la variable principale */
 }
 
 /* Animation au survol de la carte (Hover effect) */
 .box:hover {
-    border: 1px solid var(--main-color); /* Fait apparaître une bordure de la couleur principale */
-    transform: translateY(-8px) scale(1.01); /* Déplace légèrement la carte vers le haut et l'agrandit à peine pour un effet dynamique */
-    box-shadow: 0 0 15px var(--main-color); /* Intensifie l'ombre pour accentuer l'effet de l'élévation */
+    border: 1px solid var(--main-color) ; /* Fait apparaître une bordure de la couleur principale */
+    transform: translateY(-8px) scale(1.01) ; /* Déplace légèrement la carte vers le haut et l'agrandit à peine */
+    box-shadow: 0 0 15px var(--main-color) ; /* Intensifie l'ombre pour accentuer l'effet de l'élévation */
 }
 
 /* Modification du bouton lorsque la carte est survolée */
 .box:hover .btn {
-    background: transparent; /* Le fond du bouton devient transparent */
-    color: var(--main-color); /* Le texte prend la couleur principale */
-    border: 2px solid var(--main-color); /* Une bordure de la couleur principale apparaît */
+    background: transparent ; /* Le fond du bouton devient transparent */
+    color: var(--main-color) ; /* Le texte prend la couleur principale */
+    border: 2px solid var(--main-color) ; /* Une bordure de la couleur principale apparaît */
+}
+
+/* ================================================================================================================================================ */
+/* Review & Footer - Structure de base */
+
+/* Section globale des avis clients */
+.review {
+    background: var(--bg-color) ; /* Applique la couleur de fond principale à toute la section */
+    padding: 5rem 9% 7rem ; /* Espacement interne : Haut 5rem, Gauche/Droite 9%, Bas 7rem pour l'équilibre */
+}
+
+/* Boîte de regroupement interne de la section */
+.review-box {
+    display: flex ; /* Active le mode de mise en page Flexbox */
+    flex-direction: column ; /* Aligne le titre principal et la grille verticalement (du haut vers le bas) */
+    align-items: center ; /* Centre horizontalement tous les éléments enfants (titre et grille) */
+    justify-content: center ; /* Centre verticalement le contenu si nécessaire */
+    width: 100%; /* S'assure que le conteneur utilise toute la largeur disponible */
+}
+
+/* Titre principal de la section Review */
+.review .heading {
+    margin-bottom: 5rem ; /* Crée un espace important sous le titre pour l'isoler des cartes */
+}
+
+/* Le conteneur de la grille (Équivalent de .plans-content) */
+.wapper {
+    display: grid ; /* Active le mode de mise en page en Grille CSS */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) ; /* Crée des colonnes responsives d'au moins 350px s'adaptant à l'écran */
+    gap: 3rem ; /* Applique un espace régulier de 3rem entre chaque carte d'avis */
+    width: 100% ; /* Force la grille à occuper 100% de la largeur de son parent */
+}
+
+/* Le style de chaque carte d'avis client (Équivalent de .box) */
+.review-item {
+    display: flex ; /* Active Flexbox pour gérer la distribution des éléments internes */
+    flex-direction: column ; /* Aligne verticalement les éléments : Image -> Nom -> Étoiles -> Texte */
+    align-items: center ; /* Centre horizontalement l'image, le nom, les étoiles et le paragraphe */
+    justify-content: center ; /* Équilibre parfaitement l'espacement vertical au sein de la carte */
+    background: var(--snd-bg-color) ; /* Applique la couleur de fond secondaire pour détacher la carte */
+    border-radius: 2rem ; /* Arrondit les angles de la carte à 2rem pour un style fluide */
+    border: 3px solid var(--text-color) ; /* Applique une bordure initiale solide basée sur votre couleur de texte */
+    padding: 40px 30px ; /* Espacement interne : 40px haut/bas pour respirer, 30px gauche/droite */
+    gap: 1.5rem ; /* Fixe un espace strict, identique et harmonieux entre CHAQUE élément interne */
+    color: var(--text-color) ; /* Force la couleur du texte interne selon votre variable globale */
+    cursor: pointer ; /* Modifie le curseur de la souris en forme de main au survol de la carte */
+    transition: all 0.5s ease-in-out ; /* Fluidifie l'ensemble des animations et transitions sur 0.5 seconde */
+    text-align: center ; /* Assure le centrage horizontal de toutes les lignes de texte */
+}
+
+/* Style de la photo de profil du client */
+.review-item .review-img {
+    width: 100px ; /* Fixe la largeur de l'image à 100 pixels */
+    height: 100px ; /* Fixe la hauteur de l'image à 100 pixels */
+    border-radius: 50% ; /* Transforme le carré de l'image en un cercle parfait */
+    object-fit: cover ; /* Recadre proprement l'image sans l'écraser ni la déformer */
+    border: 3px solid var(--text-color) ; /* Ajoute un anneau de contour autour de la photo */
+}
+
+/* Nom du client (Balise h2 dans la carte) */
+.review-item h2 {
+    font-size: 2.5rem ; /* Fixe la taille de la police du nom à 2.5rem */
+    margin: 0 ; /* Supprime les marges de bloc natives pour éviter les décalages de structure */
+}
+
+/* Zone contenant les icônes d'étoiles */
+.ratting {
+    display: flex ; /* Active Flexbox pour aligner les étoiles horizontalement sur une seule ligne */
+    gap: 0.5rem ; /* Crée un petit espace de 0.5rem bien calibré entre chaque étoile */
+}
+
+/* Style individuel des étoiles de notation */
+.star {
+    color: gold ; /* Teinte les étoiles avec une couleur dorée */
+    font-size: 2rem ; /* Ajuste la taille des étoiles à 2rem */
+}
+
+/* Corps du texte de l'avis client (Paragraphe) */
+.review-item p {
+    font-size: 1.4rem ; /* Fixe la taille de la police du commentaire à 1.4rem */
+    line-height: 1.6 ; /* Augmente l'interlignage à 1.6 pour maximiser la lisibilité du texte */
+    margin: 0 ; /* Supprime la marge par défaut pour conserver un espacement dicté uniquement par la propriété gap */
+}
+
+/* Animation au survol de la carte d'avis (Hover effect) */
+.review-item:hover {
+    transform: translateY(-5px) scale(1.03) ; /* Soulève la carte de 5px et l'agrandit de 3% pour créer du relief */
+    box-shadow: 0 10px 20px rgba(197, 22, 22, 0.2) ; /* Projette une ombre douce teintée de rouge sous la carte */
+    border: 3px solid var(--main-color) ; /* Fait basculer la couleur de la bordure vers la couleur principale */
 }
