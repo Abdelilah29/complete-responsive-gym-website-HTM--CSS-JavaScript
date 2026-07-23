@@ -582,3 +582,128 @@ span {
     font-size: 16px ; /* Définit la taille de la police à 16 pixels */
     color: var(--text-color) ; /* Colore le texte avec la couleur de texte secondaire définie dans les variables */ 
 }
+
+/* Progress Bar Track Container */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Adjust height if desired */
+  background-color: transparent;
+  z-index: 9999; /* Keeps it above headers and navbar elements */
+}
+
+/* Dynamic Filling Bar */
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%; /* Starts at 0% and is controlled by JavaScript */
+  
+  /* Linear Gradient: Text color (White) to Red */
+  background: linear-gradient(90deg, #ffffff 0%, #ff2e2e 100%);
+  
+  /* Smooth visual adjustment */
+  transition: width 0.1s ease-out;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+/* Base link styling */
+.copyright a {
+  color: inherit; /* Inherits the exact color from the parent paragraph */
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Hidden red line under your name */
+.copyright a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  color: var(--main-color);
+  background-color: var(--main-color); /* Red line color */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Hover State: Text color remains unchanged, red line expands */
+.copyright a:hover {
+  color: var(--main-color); /* Keeps text color identical to the rest of the line */
+}
+
+.copyright a:hover::after {
+  width: 100%; /* Slides out the red underline */
+}
+
+/* ================================================================================================================================================ */
+/* Responsive Design */
+
+/* Large Laptops & Desktops (Under 1200px) */
+@media (max-width: 1200px) {
+    html {
+        /* Base rem adjustment: 1rem = 8.8px (down from 10px baseline) */
+        font-size: 55%; 
+    }
+}
+
+/* Tablets & Mobile Navigation View (Under 991px) */
+@media (max-width: 991px) {
+    /* --- Navigation Bar Setup --- */
+    #menu-icon {
+        display: block; /* Show mobile hamburger toggle icon */
+    }
+
+    .nav-bar {
+        position: absolute;
+        top: 100%;
+        right: -100%; /* Fully hide off-screen (fixes partial visibility) */
+        width: 255px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        transition: all 0.5s ease;
+    }
+
+    .nav-bar a {
+        display: block;
+        padding: 1.7rem;
+        font-size: 2.2rem;
+    }
+
+    /* Active state to slide menu onto screen */
+    .nav-bar.active {
+        right: 0; 
+    }
+
+    /* --- Global Layout Adjustments --- */
+    header {
+        padding: 2rem 3%;
+    }
+
+    section,
+    .services {
+        padding: 7rem 3%; /* Added horizontal padding to prevent side overflowing */
+    }
+
+    /* --- About Section --- */
+    .about-content h2 {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 5rem;
+    }
+
+    /* --- Reviews Section --- */
+    .review .wrapper {
+        /* Stack review cards into a clean 1-column layout */
+        grid-template-columns: 1fr; 
+    }
+
+    /* --- Footer --- */
+    .footer {
+        padding: 4rem 0;
+    }
+}

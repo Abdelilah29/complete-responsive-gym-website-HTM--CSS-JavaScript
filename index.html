@@ -213,10 +213,33 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-        <p class="copyright">&copy; Power Fitness 2026 - All rights reserved.</p>
-        
+        <p class="copyright">&copy; Power Fitness 2026 - All rights reserved. | Website developed by <a href="https://www.linkedin.com/in/benmoussa-abdelilah-khaled" target="_blank" rel="noopener noreferrer">Benmoussa Abdelilah Khaled</a>.</p>
     </footer>
 
+    <!-- Scroll Progress Bar Container -->
+     <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="progressBar"></div>
+    </div>
+
 </body>
+
+<script>
+  window.addEventListener('scroll', () => {
+    // 1. Get current scrolled height from the top
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    // 2. Calculate maximum scrollable distance available
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // 3. Compute scroll percentage (0 to 100)
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+    
+    // 4. Update progress bar width dynamically
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+      progressBar.style.width = scrollPercentage + '%';
+    }
+  });
+</script>
 
 </html>
